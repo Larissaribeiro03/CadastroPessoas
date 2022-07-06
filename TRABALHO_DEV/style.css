@@ -1,7 +1,17 @@
 .cadastro {
-    max-width: 400px;
+    max-width: 800px;
     padding: 30px;
     margin: 0 auto;
   }
 
+  .container {
+    max-width: 400px;
+    margin: 50px;
+    border: 1px solid #ccc;
+  }
   
+  .item {
+    margin: 5px;
+    text-align: center;
+    font-size: 1.5em;
+  }

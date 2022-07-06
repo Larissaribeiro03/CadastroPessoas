@@ -1,12 +1,9 @@
 
-
-
 function cadastrarPessoa(e){
     var nomePessoa = document.getElementById('name').value;
     var cpfPessoa = document.getElementById('cpf').value;
     var valida = true;
     
-
     pessoa= {
         nome : nomePessoa,
         cpf : cpfPessoa
@@ -14,16 +11,12 @@ function cadastrarPessoa(e){
 
     if(localStorage.getItem('cadastroPessoa') === null){
         var pessoas= [];     
-        validarCpf();
-        alert("Entrou no IF");
         if(valida){
             pessoas.push(pessoa);
             localStorage.setItem('cadastroPessoa',JSON.stringify(pessoas));
         }
     } else {
         var pessoas = JSON.parse(localStorage.getItem('cadastroPessoa'));
-        validarCpf();
-        alert("Entrou no ELSE");
         if(valida){
             pessoas.push(pessoa);
             localStorage.setItem('cadastroPessoa',JSON.stringify(pessoas));
@@ -84,11 +77,3 @@ function mascaraCpf(cpf){
         cpf.value = textoAjustado;
 }
 
-function validarCpf(cpf) {
-    alert(cpf);
-    if (cpf.length != 11 || cpf == "undefined") {
-        alert("Entrou no IF do validaCPF");
-         return valida = false;
-    }
-    
-}

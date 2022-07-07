@@ -4,6 +4,7 @@ function cadastrarPessoa(e){
     var cpfPessoa = document.getElementById('cpf').value;
     var valida = true;
     
+
     pessoa= {
         nome : nomePessoa,
         cpf : cpfPessoa
@@ -73,7 +74,12 @@ function mascaraCpf(cpf){
     const parte4 = textoAtual.slice(9,11);
     textoAjustado = `${parte1}.${parte2}.${parte3}-${parte4}`        
     
-    if (cpf.value != "") 
+    if (cpf.value != "") {
         cpf.value = textoAjustado;
+    }
+    if (cpf.value.length != 14) {
+        alert("CPF Inválido.");
+    }
+    
 }
 
